@@ -1,0 +1,121 @@
+<% page.parts.forEach((partial)=>{ %>
+    <% if (partial.__component=='parts.about') { %>
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-end">
+                    <div class="col-lg-3 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+                        <img class="img-fluid rounded" data-wow-delay="0.1s" src="img/about.jpg">
+                    </div>
+                    <div class="col-lg-6 col-md-7 wow fadeInUp" data-wow-delay="0.3s">
+                        <h1 class="display-1 text-primary mb-0"><%= partial.displayText %></h1>
+                        <p class="text-primary mb-4"><%= partial.displayPrimary %></p>
+                        <h1 class="display-5 mb-4"><%= partial.head %></h1>
+                        <p class="mb-4"><%= partial.text %></p>
+                        <a class="btn btn-primary py-3 px-4" href="<%= partial.button?.href %>"><%= partial.button?.text %></a>
+                    </div>
+                    <div class="col-lg-3 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="row g-5">
+                            <% partial.features?.forEach((feature,index)=>{ %>
+                            <div class="col-12 col-sm-6 col-lg-12">
+                                <div class="border-start ps-4">
+                                    <i class="fa <%= feature.icon %> fa-3x text-primary mb-3"></i>
+                                    <h4 class="mb-3"><%= feature.head %></h4>
+                                    <span><%= feature.text %></span>
+                                </div>
+                            </div>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% }else if (partial.__component=='parts.why-us'){ %>
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <p class="fs-5 fw-bold text-primary"><%= partial.displayText %></p>
+                        <h1 class="display-5 mb-4"><%= partial.head %></h1>
+                        <p class="mb-4"><%= partial.text %></p>
+                        <a class="btn btn-primary py-3 px-4" href="<%= partial.button?.href %>"><%= partial.button?.text %></a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-md-6">
+                                <div class="row g-4">
+                                    <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
+                                        <div class="text-center rounded py-5 px-4" style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
+                                            <div class="btn-square bg-light rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                                                <i class="fa <%= partial.features[0]?.icon %> fa-3x text-primary"></i>
+                                            </div>
+                                            <h4 class="mb-0"><%= partial.features[0]?.head %></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
+                                        <div class="text-center rounded py-5 px-4" style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
+                                            <div class="btn-square bg-light rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                                                <i class="fa <%= partial.features[1]?.icon %> fa-3x text-primary"></i>
+                                            </div>
+                                            <h4 class="mb-0"><%= partial.features[1]?.head %></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
+                                <div class="text-center rounded py-5 px-4" style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
+                                    <div class="btn-square bg-light rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                                        <i class="fa <%= partial.features[2]?.icon %> fa-3x text-primary"></i>
+                                    </div>
+                                    <h4 class="mb-0"><%= partial.features[2]?.head %></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% }else if (partial.__component=='parts.services'){ %>
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                    <p class="fs-5 fw-bold text-primary"><%= partial.displayText %></p>
+                    <h1 class="display-5 mb-5"><%= partial.head %></h1>
+                </div>
+                <div class="row g-4">
+                    <% partial.services?.forEach((service,index)=>{ %>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item rounded d-flex h-100">
+                            <div class="service-img rounded">
+                                <img class="img-fluid" src="<%= service.image?.name %>" alt="">
+                            </div>
+                            <div class="service-text rounded p-5">
+                                <div class="btn-square rounded-circle mx-auto mb-3">
+                                    <img class="img-fluid" src="<%= service.icon?.name %>" alt="Icon">
+                                </div>
+                                <h4 class="mb-3"><%= service.head %></h4>
+                                <p class="mb-4"><%= service.text %></p>
+                                <a class="btn btn-sm" href="<%= service.button?.href %>"><i class="fa <%= service.button?.class %> text-primary me-2"></i><%= service.button?.text %></a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    <% }else if (partial.__component=='parts.contact-us'){ %>
+        <%- include('contact-form',{partial}) %>
+    <% }else if (partial.__component=='parts.facts'){ %>
+        <div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="img/carousel-1.jpg">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <% partial.features?.forEach((feature,index)=>{ %>
+                    <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+                        <h1 class="display-4 text-white" data-toggle="counter-up"><%= feature.text %></h1>
+                        <span class="fs-5 fw-semi-bold text-light"><%= feature.head %></span>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    <% } %>
+<% }); %>

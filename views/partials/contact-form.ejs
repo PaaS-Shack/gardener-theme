@@ -1,0 +1,56 @@
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="fs-5 fw-bold text-primary"><%= partial.displayText %></p>
+            <h1 class="display-5 mb-5"><%= partial.head %></h1>
+            <p class="mb-4"><%= partial.text %></p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="bg-light rounded p-4 p-sm-5 wow fadeInUp" data-wow-delay="0.1s">
+
+                    <form class="row g-3" action="/contact" method="post">
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control border-0" id="name" name="name"
+                                    placeholder="Gurdian Name">
+                                <label for="name">Your Name</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control border-0" id="email" name="email"
+                                    placeholder="Gurdian Email">
+                                <label for="email">Your Email</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control border-0" id="number" name="number"
+                                    placeholder="Child Name">
+                                <label for="number">Your Mobile</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control border-0" id="subject" name="subject"
+                                    placeholder="Child Age">
+                                <label for="subject">Service Type</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control border-0" placeholder="Leave a message here" id="message"
+                                    name="message" style="height: 100px"></textarea>
+                                <label for="message">Message</label>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button class="btn btn-primary py-3 px-4" type="submit">Submit Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
