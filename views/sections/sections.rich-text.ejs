@@ -1,0 +1,17 @@
+<!--
+
+    - markdown Section
+    bootstrap 4.5.3 
+
+    template passed in section = {
+      "__component": "sections.rich-text",
+      "id": 1,
+      "content": "[![Moleculer](https://badgen.net/badge/Powered%20by/Moleculer/0e83cd)](https://moleculer.services)\n\n# kube\nThis is a [Moleculer](https://moleculer.services/)-based microservices project. Generated with the [Moleculer CLI](https://moleculer.services/docs/0.14/moleculer-cli.html).\n\n## Usage\nStart the project with `npm run dev` command. \nIn the terminal, try the following commands:\n- `nodes` - List all connected nodes.\n- `actions` - List all registered service actions.\n- `call greeter.hello` - Call the `greeter.hello` action.\n- `call greeter.welcome --name John` - Call the `greeter.welcome` action with the `name` parameter.\n\n\n\n## Services\n- **api**: API Gateway services\n- **greeter**: Sample service with `hello` and `welcome` actions.\n\n\n## Useful links\n\n* Moleculer website: https://moleculer.services/\n* Moleculer Documentation: https://moleculer.services/docs/0.14/\n\n## NPM scripts\n\n- `npm run dev`: Start development mode (load all services locally with hot-reload & REPL)\n- `npm run start`: Start production mode (set `SERVICES` env variable to load certain services)\n- `npm run cli`: Start a CLI and connect to production. Don't forget to set production namespace with `--ns` argument in script\n- `npm run lint`: Run ESLint\n- `npm run ci`: Run continuous test mode with watching\n- `npm test`: Run tests & generate coverage report\n- `npm run dc:up`: Start the stack with Docker Compose\n- `npm run dc:down`: Stop the stack with Docker Compose"
+    }
+
+    -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <%- markdown(section.content) %>
+  </div>
+</div>

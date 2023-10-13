@@ -1,0 +1,116 @@
+<!--
+
+    - feature row group Section
+    bootstrap 4.5.3 
+
+css file = assets/css/style.css
+
+    template passed in section = {
+      "__component": "sections.testimonials-group",
+      "id": 1,
+      "title": "What Our Clients Say About Us!",
+      "description": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.",
+      "link": {
+        "id": 4,
+        "url": "/about",
+        "newTab": false,
+        "text": "See more"
+      },
+      "logos": [
+        {
+          "id": 1,
+          "title": "OneHost CA",
+          "logo": {
+            "id": 1,
+            "name": "graphic only transparent logo.png",
+            "alternativeText": "",
+            "caption": "",
+            "width": 316,
+            "height": 162,
+            "hash": "graphic_only_transparent_logo_db14a79740",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 6.94,
+            "url": "/uploads/graphic_only_transparent_logo_db14a79740.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "created_at": "2023-09-27T20:03:24.607Z",
+            "updated_at": "2023-09-27T20:03:24.630Z"
+          }
+        }
+      ],
+      "testimonials": [
+        {
+          "id": 1,
+          "text": "Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.",
+          "authorName": "Client Name",
+          "authorTitle": "Profession",
+          "link": "https://some-site.com",
+          "logo": {
+            "id": 7,
+            "name": "client-1.png",
+            "alternativeText": "",
+            "caption": "",
+            "width": 400,
+            "height": 173,
+            "hash": "client_1_1c4d1ea2b3",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 5.28,
+            "url": "/uploads/client_1_1c4d1ea2b3.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "created_at": "2023-09-27T22:01:43.715Z",
+            "updated_at": "2023-09-27T22:01:43.736Z"
+          },
+          "picture": {
+            "id": 6,
+            "name": "http://localhost:4100/img/testimonial-1.jpg",
+            "alternativeText": "",
+            "caption": "",
+            "width": 100,
+            "height": 100,
+            "formats": null,
+            "hash": "testimonial_1_5fb1103e50",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "size": 3.07,
+            "url": "/uploads/testimonial_1_5fb1103e50.jpg",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "created_at": "2023-09-27T21:59:18.379Z",
+            "updated_at": "2023-09-27T21:59:18.405Z"
+          }
+        }
+      ]
+    }
+
+    -->
+
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+        <p class="fs-5 fw-bold text-primary">Testimonial</p>
+        <h1 class="display-5 mb-5"><%= section.title %></h1>
+        <p class="mb-4"><%= section.description %></p>
+        <a class="btn btn-primary py-3 px-4" href="<%= section.link.url %>"><%= section.link.text %></a>
+      </div>
+      <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="owl-carousel testimonial-carousel">
+          <% section.testimonials.forEach(function(testimonial) { %>
+          <div class="testimonial-item">
+            <img class="img-fluid rounded mb-3" src="<%= testimonial.picture.url %>" alt="<%= testimonial.authorName %>">
+            <p class="fs-5"><%= testimonial.text %></p>
+            <h4><%= testimonial.authorName %></h4>
+            <span><%= testimonial.authorTitle %></span>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

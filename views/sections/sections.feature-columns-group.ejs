@@ -1,0 +1,51 @@
+<!--
+
+    - feature columns group Section
+    bootstrap 4.5.3 
+
+    template passed in section = {
+      "__component": "sections.feature-columns-group",
+      "id": 1,
+      "features": [
+        {
+          "id": 1,
+          "title": "No code",
+          "description": "some great Description",
+          "icon": {
+            "id": 1,
+            "name": "graphic only transparent logo.png",
+            "alternativeText": "",
+            "caption": "",
+            "width": 316,
+            "height": 162,
+            "hash": "graphic_only_transparent_logo_db14a79740",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 6.94,
+            "url": "/uploads/graphic_only_transparent_logo_db14a79740.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "created_at": "2023-09-27T20:03:24.607Z",
+            "updated_at": "2023-09-27T20:03:24.630Z"
+          }
+        }
+      ]
+    }
+
+    -->
+<section class="feature-columns-group py-5">
+    <div class="container py-5">
+        <div class="row text-center">
+            <% section.features.forEach(function(feature) { %>
+            <div class="col-lg-4 mb-5">
+                <div class="icon-rounded bg-primary-light mb-3">
+                    <img src="<%= feature.icon.url %>" alt="<%= feature.icon.alternativeText %>" class="img-fluid" width="50" height="50">
+                </div>
+                <h3 class="h4 mb-2"><%= feature.title %></h3>
+                <p class="text-muted mb-0"><%= feature.description %></p>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</section>

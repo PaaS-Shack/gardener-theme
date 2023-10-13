@@ -1,0 +1,44 @@
+<!--
+
+    - feature columns group Section
+    bootstrap 4.5.3 
+
+    template passed in section = {
+      "__component": "sections.bottom-actions",
+      "id": 1,
+      "title": "button actions",
+      "buttons": [
+        {
+          "id": 4,
+          "url": "/home",
+          "newTab": false,
+          "text": "Home",
+          "type": "primary"
+        },
+        {
+          "id": 3,
+          "url": "/about",
+          "newTab": false,
+          "text": "About",
+          "type": "secondary"
+        }
+      ]
+    },
+
+    -->
+<section class="bottom-actions py-5">
+    <div class="container py-5">
+        <div class="row">
+            <% section.buttons.forEach(function(button) { %>
+            <div class="col-lg-6 mb-3">
+                <a href="<%= button.url %>" class="btn btn-<%= button.type %> rounded-pill px-4"><%= button.text %></a>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+<style>
+    .bottom-actions {
+        background-color: #f8f9fa;
+    }
+</style>

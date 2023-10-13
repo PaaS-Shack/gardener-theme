@@ -1,0 +1,52 @@
+<!--
+
+    - Hero Section
+    bootstrap 4.5.3 
+
+    template passed in section = {
+      "__component": "sections.hero",
+      "id": 1,
+      "title": "Make Your Home Like Garden",
+      "label": "hosting",
+      "description": "Make Your Home Like Garden",
+      "smallTextWithLink": "Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.",
+      "buttons": [
+        {
+          "id": 2,
+          "url": "/contact",
+          "newTab": false,
+          "text": "Get in touch",
+          "type": "primary"
+        }
+      ],
+      "picture": {
+        "id": 4,
+        "name": "carousel-1.jpg",
+        "alternativeText": "",
+        "caption": "",
+        "width": 1920,
+        "height": 1080,
+        "hash": "carousel_1_75774b28f1",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 183.31,
+        "url": "/uploads/carousel_1_75774b28f1.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_at": "2023-09-27T21:00:33.382Z",
+        "updated_at": "2023-09-27T21:00:33.406Z"
+      }
+    },
+
+    -->
+    <section class="hero bg-cover bg-position py-5" style="background: url('<%= section.picture.url %>')">
+        <div class="container py-5 index-forward text-white">
+            <h1 class="display-5 fw-bold"><%= section.title %></h1>
+            <p class="col-lg-6 mb-5"><%= section.description %></p>
+            <% section.buttons.forEach(function(button) { %>
+            <a href="<%= button.url %>" class="btn btn-primary rounded-pill px-4 me-3"><%= button.text %></a>
+            <% }); %>
+            <a href="#about" class="btn btn-link text-white"><i class="fa fa-arrow-down me-2"></i>Learn more</a>
+        </div>
+    </section>
